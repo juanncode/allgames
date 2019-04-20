@@ -1,0 +1,9 @@
+.card {
+  width: 18rem;
+}
+.card-game-stars {
+  display: inline-block;
+  margin-left: 0.5em;
+  color: gold;
+  width: 50%;
+}
