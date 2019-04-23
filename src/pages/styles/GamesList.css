@@ -1,0 +1,39 @@
+.container {
+  max-width: 100%;
+}
+.icon-search {
+  vertical-align: middle;
+  align-content: center;
+
+  text-align: center;
+}
+.list-games {
+  padding-top: 10px;
+}
+.input-search {
+  max-width: 100vh;
+}
+.search {
+  /* padding-left: 20px; */
+
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 0%;
+  padding-left: 20px;
+  position: sticky;
+  top: 4.25rem;
+  z-index: 1001;
+  background-color: #fd4810;
+}
+
+.mapa-canchas {
+  padding-top: 10px;
+  padding-left: 0%;
+  position: sticky;
+  top: 8.5rem;
+  z-index: 1000;
+  height: calc(100vh - 139px);
+}
