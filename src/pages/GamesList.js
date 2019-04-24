@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Games from "../components/Games";
 import "./styles/GamesList.css";
-import "../components/styles/global.css";
 import GamesListMap from "../components/GamesListMap";
 class GamesList extends React.Component {
   state = {
@@ -43,8 +42,7 @@ class GamesList extends React.Component {
   };
   render() {
     return (
-      <div>
-        <Navbar />
+      <React.Fragment>
         <div className=" search ">
           <form className="form-inline col-md-7">
             <i className="fas fa-search" aria-hidden="true" />
@@ -66,7 +64,7 @@ class GamesList extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

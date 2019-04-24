@@ -1,13 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import "../components/styles/global.css";
 import "./styles/GamesHome.css";
 import Futbolista from "../images/deporte.jpg";
 class GamesHome extends React.Component {
   render() {
     return (
-      <div>
-        <Navbar />
+      <React.Fragment>
         <div className="container goTemplate">
           <div className="row">
             <div className="col-6">
@@ -19,12 +18,9 @@ class GamesHome extends React.Component {
                 lugar y contactese de inmediato.
               </p>
               <p className="lead">
-                <a
-                  href="http://localhost:3000/mapa"
-                  className="btn btn-lg btn-primary"
-                >
+                <Link to="/mapa" className="btn btn-lg btn-primary">
                   Empieza ya!
-                </a>
+                </Link>
               </p>
             </div>
             <div className="col-6 ">
@@ -35,7 +31,7 @@ class GamesHome extends React.Component {
         <div className="mastfoot text-center">
           <p>©2019 Gogo app by juanortizmg@gmail.com.</p>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

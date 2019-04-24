@@ -42,8 +42,7 @@ class SetGames extends React.Component {
   };
   render() {
     return (
-      <div>
-        <Navbar />
+      <React.Fragment>
         <div className="containerSetGames">
           <div className="row">
             <div className="col-6">
@@ -62,7 +61,7 @@ class SetGames extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

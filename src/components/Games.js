@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles/Games.css";
 import { Carousel } from "react-responsive-carousel";
