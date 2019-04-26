@@ -8,7 +8,7 @@ class Games extends React.Component {
   render() {
     return (
       <ul className="list-unstyled">
-        {this.props.lista.map(cancha => {
+        {this.props.lista.map((cancha, index) => {
           return (
             <li key={cancha.id} className="card-game">
               <div className="card cardContainer ">
@@ -17,20 +17,28 @@ class Games extends React.Component {
                   <div className="col-md-4">
                     <Carousel infiniteLoop showThumbs={false}>
                       <div>
-                        <img src={pelota} />
+                        <img src={pelota} alt="..." />
                       </div>
                       <div>
-                        <img src={pelota} />
+                        <img src={pelota} alt="..." />
                       </div>
                       <div>
-                        <img src={pelota} />
+                        <img src={pelota} alt="..." />
                       </div>
                     </Carousel>
                   </div>
 
                   {/* div para informacion de la cancha */}
                   <div className="col-md-8">
-                    <div className="card-body">
+                    <div
+                      className="card-body"
+                      onClick={() => {
+                        this.props.itemClick(cancha);
+                      }}
+                      onMouseOver={() => {
+                        this.props.itemOver(cancha);
+                      }}
+                    >
                       <h5 className="card-title">{cancha.nombre}</h5>
                       <p className="card-text">
                         This is a wider card with supporting text below as a

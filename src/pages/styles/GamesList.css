@@ -28,12 +28,3 @@
   z-index: 1001;
   background-color: rgb(228, 228, 228);
 }
-
-.mapa-canchas {
-  padding-top: 10px;
-  padding-left: 0%;
-  position: sticky;
-  top: 8.5rem;
-  z-index: 1000;
-  height: calc(100vh - 139px);
-}

@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import "./styles/SetGames.css";
 import GamesForm from "../components/GamesForm";
 import GamesMaps from "../components/GamesMaps";
