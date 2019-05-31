@@ -7,11 +7,28 @@ import pelota from "../images/deporte.jpg";
 class Games extends React.Component {
   render() {
     return (
-      <ul className="list-unstyled">
+      <ul className="list-group list-unstyled">
         {this.props.lista.map((cancha, index) => {
           return (
-            <li key={cancha.id} className="card-game">
-              <div className="card cardContainer ">
+            <li
+              key={cancha.id}
+              className={
+                "list-group-item card-game " +
+                (this.props.lastMarkerSelect === cancha.id ? "active" : "")
+              }
+              // onMouseLeave={() => {
+              //   this.props.itemOut(cancha);
+              // }}
+            >
+              <div
+                className=" "
+                onMouseEnter={() => {
+                  this.props.itemOver(cancha);
+                }}
+                onClick={() => {
+                  this.props.itemClick(cancha);
+                }}
+              >
                 <div className="row no-gutters">
                   {/* div para imagenes */}
                   <div className="col-md-4">
@@ -30,15 +47,7 @@ class Games extends React.Component {
 
                   {/* div para informacion de la cancha */}
                   <div className="col-md-8">
-                    <div
-                      className="card-body"
-                      onClick={() => {
-                        this.props.itemClick(cancha);
-                      }}
-                      onMouseOver={() => {
-                        this.props.itemOver(cancha);
-                      }}
-                    >
+                    <div className="card-body">
                       <h5 className="card-title">{cancha.nombre}</h5>
                       <p className="card-text">
                         This is a wider card with supporting text below as a

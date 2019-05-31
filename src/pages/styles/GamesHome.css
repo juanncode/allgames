@@ -1,14 +1,43 @@
-.mastfoot {
-  color: #353535;
+.container-home {
+  display: block;
 }
-.avatar {
-  width: 550px;
-  height: 450px;
+.first-container {
+  padding: 50px 50px;
+  font-family: "Arimo", sans-serif;
+  background: #1e8cbe;
+  display: grid;
+  border: 1px solid red;
+  grid-gap: 20px 10px;
+  grid-template-areas:
+    "titulo titulo-mensaje titulo-mensaje"
+    "description description img-games";
+  grid-template-columns: 1fr 1fr auto;
 }
-.goTemplate {
-  padding: 6rem;
+.app-container {
+  border: 1px solid red;
 }
-.goTemplate .btn-lg {
-  padding: 0.75rem 1.25rem;
-  font-weight: 700;
+
+.footer-message1 {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer-message2 {
+  display: flex;
+  justify-content: flex-end;
+}
+.titulo {
+  grid-area: titulo;
+  border: 1px solid red;
+}
+.titulo-mensaje {
+  grid-area: titulo-mensaje;
+  border: 1px solid red;
+}
+.description {
+  grid-area: description;
+  border: 1px solid red;
+}
+.img-games {
+  grid-area: img-games;
+  border: 1px solid red;
 }
