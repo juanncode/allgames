@@ -2,6 +2,8 @@ import React from "react";
 import Games from "../components/Games";
 import "./styles/GamesList.css";
 import GamesListMap from "../components/GamesListMap";
+import Loading from "../components/Loading";
+import NotFound from "./NotFound";
 import { load_places } from "../utils/utils";
 
 class GamesList extends React.Component {
@@ -24,15 +26,19 @@ class GamesList extends React.Component {
 
   componentDidMount() {
     this.fetchDataCanchas(); //traer datos desde la api
-    this.setState({ data: load_places() });
-    this.setState({ filteredCanchas: load_places() });
   }
 
   fetchDataCanchas = () => {
     this.setState({ loading: true, error: null });
     try {
-      this.setState({ loading: false });
-      // throw new Error("Not found");
+      setTimeout(() => {
+        const data = load_places();
+        this.setState({ data: data });
+        this.setState({ filteredCanchas: data });
+        this.setState({ loading: false });
+      }, 2000);
+
+      // throw new Error("Error en el servidor");
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
@@ -75,10 +81,10 @@ class GamesList extends React.Component {
   // };
   render() {
     if (this.state.loading) {
-      return "Loading...";
+      return <Loading />;
     }
     if (this.state.error) {
-      return `Error: ${this.state.error.message}`;
+      return <NotFound error={this.state.error.message} />;
     }
     return (
       <React.Fragment>

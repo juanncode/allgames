@@ -1,3 +1,19 @@
-.containerSetGames {
-  margin: 10px;
+.container-setgames {
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  /* border: 1px solid red; */
+
+  grid-template-areas: "mapSetGames formSetGames";
+}
+.mapSetGames {
+  grid-area: mapSetGames;
+  /* border: 1px solid red; */
+  /* padding: 20px; */
+  display: flex;
+}
+.formSetGames {
+  grid-area: formSetGames;
+  /* padding: 20px; */
+
+  /* border: 1px solid red; */
 }

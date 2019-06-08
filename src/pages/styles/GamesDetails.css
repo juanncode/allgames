@@ -1,0 +1,28 @@
+.containerDetail {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-template-rows: 300px 1fr auto;
+  grid-template-areas:
+    "fotosDetail fotosDetail"
+    "information barrioMapa"
+    "footerDetail footerDetail";
+}
+.fotosDetail {
+  grid-area: fotosDetail;
+  border: 1px solid green;
+}
+
+.barrioMapa {
+  grid-area: barrioMapa;
+}
+.information {
+  grid-area: information;
+  border: 1px solid green;
+}
+.footerDetail {
+  grid-area: footerDetail;
+  border: 1px solid green;
+}
+.titleDetail {
+  text-transform: uppercase;
+}

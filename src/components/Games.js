@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles/Games.css";
 import { Carousel } from "react-responsive-carousel";
@@ -59,9 +60,12 @@ class Games extends React.Component {
                           Last updated 3 mins ago
                         </small>
                       </p>
-                      <a href="https://platzi.com" className="btn btn-primary">
+                      <Link
+                        to={`/canchas/${cancha.id}`}
+                        className="btn btn-primary"
+                      >
                         Ver cancha
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

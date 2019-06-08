@@ -1,21 +1,21 @@
 import React from "react";
 
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { load_googlemaps } from "../utils/utils";
 import marker2 from "../images/marker4.svg";
 import marker5 from "../images/marker5.svg";
 import "./styles/GameListMap.css";
 
 class GamesListMap extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   componentDidMount() {
     let google;
     let googleMapsPromise = load_googlemaps();
     Promise.all([googleMapsPromise]).then(values => {
       google = values[0];
-      let places = values[1];
+      // let places = values[1];
 
       this.google = google;
 
@@ -28,7 +28,7 @@ class GamesListMap extends React.Component {
       this.infowindow = new google.maps.InfoWindow();
       lugares.forEach(cancha => {
         if (this.props.markerOver) {
-          let marker = new google.maps.Marker({
+          new google.maps.Marker({
             position: { lat: cancha.latitud, lng: cancha.longitud },
             venue: cancha,
             map: this.map,
@@ -62,7 +62,7 @@ class GamesListMap extends React.Component {
         google.maps.event.addListener(marker, "click", () => {
           let titulo = cancha.nombre;
           let price = cancha.price;
-          let descripcion = cancha.descripcion;
+          // let descripcion = cancha.descripcion;
           let foto = cancha.foto;
           let contentInfo =
             "<div>" +
@@ -112,7 +112,7 @@ class GamesListMap extends React.Component {
         // this.map.setCenter(this.props.markerClick.position);
         let titulo = this.props.lastCancha.nombre;
         let price = this.props.lastCancha.price;
-        let descripcion = this.props.lastCancha.descripcion;
+        // let descripcion = this.props.lastCancha.descripcion;
         let foto = this.props.lastCancha.foto;
         let contentInfo =
           "<div>" +

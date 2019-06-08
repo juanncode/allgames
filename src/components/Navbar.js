@@ -13,7 +13,7 @@ class Navbar extends React.Component {
         <div className="account">
           <div className="item-header">¿Qué es Games ABC?</div>
           <div className="item-header">
-            <Link to="/mapa">Canchas</Link>
+            <Link to="/canchas">Canchas</Link>
           </div>
 
           <div className="item-header">Contactanos</div>

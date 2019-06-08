@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 
 class GamesMaps extends React.Component {
   state = {
@@ -23,8 +23,8 @@ class GamesMaps extends React.Component {
           lng: this.props.lng
         }}
         style={{
-          width: "100%",
-          height: "100%"
+          width: "580px",
+          height: "80vh"
         }}
         zoom={14}
       >

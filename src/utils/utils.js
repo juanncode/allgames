@@ -1,5 +1,6 @@
-import React from "react";
-
+// import React from "react";
+import dotenv from "dotenv";
+dotenv.config();
 export function load_googlemaps() {
   return new Promise((resolve, reject) => {
     window.resolveGoogleMapsPromise = () => {
@@ -8,7 +9,7 @@ export function load_googlemaps() {
     };
 
     const script = document.createElement("script");
-    const API_KEY = "AIzaSyA0sKdfIBbZ9d-SXavC4IsRXcWKnMIiGz0";
+    const API_KEY = process.env.API_KEY;
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=resolveGoogleMapsPromise`;
     script.async = true;
     document.body.appendChild(script);
@@ -24,7 +25,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       direccion: "jr lima",
       latitud: -13.645262,
@@ -37,7 +38,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -50,7 +51,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -65,7 +66,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -79,7 +80,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -92,7 +93,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -107,7 +108,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -121,7 +122,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -134,7 +135,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -149,7 +150,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -163,7 +164,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -176,7 +177,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -191,7 +192,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -205,7 +206,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -218,7 +219,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -233,7 +234,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -247,7 +248,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -260,7 +261,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -275,7 +276,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -289,7 +290,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -302,7 +303,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -317,7 +318,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -331,7 +332,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -344,7 +345,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -359,7 +360,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -373,7 +374,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -386,7 +387,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -401,7 +402,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
@@ -415,7 +416,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "828",
       direccion: "jr lima",
@@ -428,7 +429,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
 
       phone: "827",
@@ -443,7 +444,7 @@ export function load_places() {
       descripcion:
         "DescripcionDescripcionDescripcionDescripcionDescripcion DescripcionDescripcion",
       foto: "https://i.servimg.com/u/f66/14/56/33/56/0310.png",
-      phone: "829",
+
       price: "29.90",
       phone: "826",
       direccion: "jr lima",
