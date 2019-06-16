@@ -4,6 +4,7 @@ import GamesForm from "../components/GamesForm";
 import GamesMaps from "../components/GamesMaps";
 import Loading from "../components/Loading";
 import NotFound from "./NotFound";
+
 class SetGames extends React.Component {
   state = {
     loading: false,
@@ -46,17 +47,25 @@ class SetGames extends React.Component {
     //   return { markers };
     // });
   };
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
     console.log(this.state.form);
     this.setState({ error: null, loading: true });
 
     try {
       // throw new Error("error asdasd");
-      setTimeout(() => {
-        this.setState({ loading: false });
-      }, 2000);
-      this.props.history.push("/mapa"); //para redirigir a una pag
+      const data = await fetch("http://localhost:3002/api/canchas", {
+        method: "POST",
+        body: JSON.stringify(this.state.form),
+        headers: {
+          "Accept": "application/json", //prettier-ignore
+          "Content-Type": "application/json"
+        }
+      });
+      console.log(data);
+      this.setState({ loading: false });
+
+      // this.props.history.push("/mapa"); //para redirigir a una pag
     } catch (error) {
       this.setState({ error: error, loading: false });
     }

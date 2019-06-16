@@ -1,6 +1,5 @@
 // import React from "react";
-import dotenv from "dotenv";
-dotenv.config();
+
 export function load_googlemaps() {
   return new Promise((resolve, reject) => {
     window.resolveGoogleMapsPromise = () => {
@@ -9,7 +8,7 @@ export function load_googlemaps() {
     };
 
     const script = document.createElement("script");
-    const API_KEY = process.env.API_KEY;
+    const API_KEY = "AIzaSyA0sKdfIBbZ9d-SXavC4IsRXcWKnMIiGz0";
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=resolveGoogleMapsPromise`;
     script.async = true;
     document.body.appendChild(script);

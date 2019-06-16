@@ -12,10 +12,10 @@ class Games extends React.Component {
         {this.props.lista.map((cancha, index) => {
           return (
             <li
-              key={cancha.id}
+              key={cancha._id}
               className={
                 "list-group-item card-game " +
-                (this.props.lastMarkerSelect === cancha.id ? "active" : "")
+                (this.props.lastMarkerSelect === cancha._id ? "active" : "")
               }
               // onMouseLeave={() => {
               //   this.props.itemOut(cancha);
@@ -49,7 +49,7 @@ class Games extends React.Component {
                   {/* div para informacion de la cancha */}
                   <div className="col-md-8">
                     <div className="card-body">
-                      <h5 className="card-title">{cancha.nombre}</h5>
+                      <h5 className="card-title">{cancha.nombreCancha}</h5>
                       <p className="card-text">
                         This is a wider card with supporting text below as a
                         natural lead-in to additional content. This content is a
@@ -61,7 +61,7 @@ class Games extends React.Component {
                         </small>
                       </p>
                       <Link
-                        to={`/canchas/${cancha.id}`}
+                        to={`/canchas/${cancha._id}`}
                         className="btn btn-primary"
                       >
                         Ver cancha

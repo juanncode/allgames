@@ -29,22 +29,22 @@ class GamesListMap extends React.Component {
       lugares.forEach(cancha => {
         if (this.props.markerOver) {
           new google.maps.Marker({
-            position: { lat: cancha.latitud, lng: cancha.longitud },
+            position: { lat: cancha.latitudCancha, lng: cancha.longitudCancha },
             venue: cancha,
             map: this.map,
             icon: marker5,
-            id: cancha.id,
-            name: cancha.nombre,
+            id: cancha._id,
+            name: cancha.nombreCancha,
             animation: google.maps.Animation.DROP
           });
         }
         let marker = new google.maps.Marker({
-          position: { lat: cancha.latitud, lng: cancha.longitud },
+          position: { lat: cancha.latitudCancha, lng: cancha.longitudCancha },
           venue: cancha,
           map: this.map,
           icon: marker2,
-          id: cancha.id,
-          name: cancha.nombre,
+          id: cancha._id,
+          name: cancha.nombreCancha,
           animation: google.maps.Animation.DROP
         });
 
@@ -60,8 +60,8 @@ class GamesListMap extends React.Component {
         });
 
         google.maps.event.addListener(marker, "click", () => {
-          let titulo = cancha.nombre;
-          let price = cancha.price;
+          let titulo = cancha.nombreCancha;
+          let price = cancha.precioCancha;
           // let descripcion = cancha.descripcion;
           let foto = cancha.foto;
           let contentInfo =
@@ -70,7 +70,7 @@ class GamesListMap extends React.Component {
             ` <h5>Cancha ${titulo}</h5>` +
             `<h4>S/.${price} por hora</h4>` +
             "</div>";
-          console.log(cancha.nombre, marker.descripcion);
+          console.log(cancha.nombreCancha, marker.descripcion);
 
           this.infowindow.setContent(contentInfo);
           this.map.setCenter(marker.position);
@@ -101,17 +101,17 @@ class GamesListMap extends React.Component {
     if (this.props.markerOver) {
       this.map.setCenter(this.props.markerOver.position);
       // this.props.markerOver.setIcon(marker5);
-      this.infowindow.setContent(this.props.lastCancha.price);
+      this.infowindow.setContent(this.props.lastCancha.precioCancha);
       this.infowindow.open(this.map, this.props.markerOver);
       this.map.panBy(0, -125);
-      console.log("hola1", this.props.markerOver);
+      // console.log("hola1", this.props.markerOver);
       if (this.props.markerOver === this.props.markerClick) {
         // this.infowindow.close();
 
         // this.props.markerClick.setIcon(marker5);
         // this.map.setCenter(this.props.markerClick.position);
-        let titulo = this.props.lastCancha.nombre;
-        let price = this.props.lastCancha.price;
+        let titulo = this.props.lastCancha.nombreCancha;
+        let price = this.props.lastCancha.precioCancha;
         // let descripcion = this.props.lastCancha.descripcion;
         let foto = this.props.lastCancha.foto;
         let contentInfo =
@@ -125,7 +125,7 @@ class GamesListMap extends React.Component {
         this.infowindow.open(this.map, this.props.markerClick);
         this.map.panBy(0, -125);
         // this.props.markerOver = this.props.markerClick;
-        console.log("hola2", this.props.markerClick.id);
+        // console.log("hola2", this.props.markerClick.id);
       }
     }
 

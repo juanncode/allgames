@@ -28,15 +28,16 @@ class GamesList extends React.Component {
     this.fetchDataCanchas(); //traer datos desde la api
   }
 
-  fetchDataCanchas = () => {
+  fetchDataCanchas = async () => {
     this.setState({ loading: true, error: null });
     try {
-      setTimeout(() => {
-        const data = load_places();
-        this.setState({ data: data });
-        this.setState({ filteredCanchas: data });
-        this.setState({ loading: false });
-      }, 2000);
+      const response = await fetch("http://localhost:3002/api/canchas");
+      const data = await response.json();
+      console.log(data);
+
+      this.setState({ data: data.data });
+      this.setState({ filteredCanchas: data.data });
+      this.setState({ loading: false });
 
       // throw new Error("Error en el servidor");
     } catch (error) {
@@ -45,7 +46,7 @@ class GamesList extends React.Component {
   };
   filterCanchas(query) {
     let f = this.state.data.filter(cancha => {
-      return cancha.nombre.toLowerCase().includes(query.toLowerCase());
+      return cancha.nombreCancha.toLowerCase().includes(query.toLowerCase());
     });
     //para borrar los markers del mapa que no estan en la lista
     // this.state.markers.forEach(marker => {
@@ -61,20 +62,24 @@ class GamesList extends React.Component {
     this.setState({ query, filteredCanchas: f });
   }
   listItemClick = cancha => {
-    let marker = this.state.markers.filter(m => m.id === cancha.id)[0];
+    let marker = this.state.markers.filter(m => m.id === cancha._id)[0];
     this.setState({
       markerClick: marker,
       lastCancha: cancha
     });
   };
   listItemOver = cancha => {
-    let marker = this.state.markers.filter(m => m.id === cancha.id)[0];
+    let marker = this.state.markers.filter(m => m.id === cancha._id)[0];
     this.setState({
       markerOver: marker,
-      lastMarkerSelect: cancha.id,
+      lastMarkerSelect: cancha._id,
       lastCancha: cancha
     });
   };
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState);
+    console.log(this.state.data);
+  }
   // listItemOut = cancha => {
   //   let marker = this.state.markers.filter(m => m.id === cancha.id)[0];
   //   this.setState({ markerOut: marker });
@@ -110,7 +115,7 @@ class GamesList extends React.Component {
             {this.state.filteredCanchas &&
               this.state.filteredCanchas.length > 0 && (
                 <Games
-                  lista={this.state.filteredCanchas}
+                  lista={this.state.filteredCanchas || this.state.data}
                   itemClick={this.listItemClick}
                   itemOver={this.listItemOver}
                   // itemOut={this.listItemOut}
